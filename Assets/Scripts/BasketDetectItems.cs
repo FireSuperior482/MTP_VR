@@ -19,6 +19,9 @@ public class BasketDetectItems : MonoBehaviour
 
         print(id);
 
+        //other.transform.parent = transform;
+      //  other.transform.SetParent(transform);
+
         if (taskgenerator.currentlist.ContainsKey(id))
         {
             taskgenerator.currentlist[id]++;
@@ -39,6 +42,8 @@ public class BasketDetectItems : MonoBehaviour
         }
 
         print(id);
+
+        other.transform.SetParent(null);
 
         if(taskgenerator.currentlist.ContainsKey(id))
         {
