@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22b9adfef4acc64d9e978572123f7df, type: 3}
+  m_Name: Uncle_Chipps
+  m_EditorClassIdentifier: 
+  name: Uncle_Chipps
+  prefab: {fileID: 4913517453617007370, guid: f0fcbece93a271642b4d574dd837cf31, type: 3}
