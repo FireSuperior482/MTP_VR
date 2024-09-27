@@ -26,15 +26,27 @@ public class taskgenerator : MonoBehaviour
         matchlist = new Dictionary<int,int>();
         currentlist = new Dictionary<int,int>();
         texts = new Dictionary<int, TMP_Text>();
-       
-        newlist(2);
+    }
+
+    public void newgame()
+    {
+        matchlist.Clear();
+        currentlist.Clear();
+        
+        foreach(KeyValuePair<int, TMP_Text> kvp in texts)
+        {
+            Destroy(kvp.Value.gameObject);
+        }
+        
+        texts.Clear();
+        
+        newlist(3);
         displaylist();
     }
 
     void newlist(int n,int maxcount =1)
     {
        
-        matchlist.Clear();
         int i = 0;
         int temp;
      

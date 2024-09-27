@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class TimingManager : MonoBehaviour
 {
-    [SerializeField] GameObject button;
+    [SerializeField] GameObject checkbutton,play;
     [SerializeField] GameObject listpanel;
     [SerializeField] TMP_Text timerText, infoText;
 
     string whileplaying = "Collect All the items you remember in the basket. place the basket near door and click submit";
-
+    string beforeplaying = "Click below button to start the game";
+    string whileshowing = "You Need to Collect all above items\r\nRemeber them before the timer ends";
 
     private float startTime;
     private bool timerIsRunning = false, taketimer = false;
@@ -19,8 +20,19 @@ public class TimingManager : MonoBehaviour
 
     void Start()
     {
-        button.SetActive(false);
+        listpanel.SetActive(false);
+        play.SetActive(true);
+        checkbutton.SetActive(false);
+        infoText.text = beforeplaying;
+        timerText.text = "";
+    }
+
+    public void startgame()
+    {
+        checkbutton.SetActive(false);
+        play.SetActive(false);
         listpanel.SetActive(true);
+        infoText.text = whileshowing;
 
         startTime = Time.time;
         timerIsRunning = true;
@@ -38,7 +50,7 @@ public class TimingManager : MonoBehaviour
             if (t <= 0)
             {
                 timerIsRunning = false;
-                button.SetActive(true);
+                checkbutton.SetActive(true);
                 listpanel.SetActive(false);
                 taketimer = true;
                 startTime = Time.time;
@@ -59,7 +71,9 @@ public class TimingManager : MonoBehaviour
     public void check()
     {
         timerText.text = "";
-        button.SetActive(false);
+        checkbutton.SetActive(false);
+        play.SetActive(true);
         listpanel.SetActive(true);
+        taketimer = false;
     }
 }
