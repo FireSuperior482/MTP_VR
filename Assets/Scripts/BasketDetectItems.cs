@@ -41,7 +41,7 @@ public class BasketDetectItems : MonoBehaviour
             return;
         }
 
-        print(id);
+        print("exit" + id);
 
         other.transform.SetParent(null);
 
